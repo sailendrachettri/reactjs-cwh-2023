@@ -1,12 +1,13 @@
 import './App.css';
 import Navbar from './components/Navbar';
+import TextForm from './components/TextForm';
 
 
 function App() {
   return (
     <>
-      <Navbar title="TextUtils" about="About us" />
-      {/* <Navbar />   - if i set navbar without props then it will take default props from the component file i.e Navbar.js*/}
+      <Navbar title="Tanalyzer" /> {/*  here about props will set fron defaultProps*/}
+      <TextForm />
     </>
   );
 }

@@ -13,16 +13,16 @@ export default function Navbar(props) {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="/">Home</a>
+                                <a className="nav-link" rel="noreferrer" target="_blank" href="https://sdweather.netlify.app">Weather</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/">{props.about}</a>
+                                <a className="nav-link" rel="noreferrer" target="_blank" href="https://laughdude.netlify.app/">Jokes</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" rel="noreferrer" target="_blank" href="https://facts-generator.netlify.app/">Facts</a>
                             </li>
                         </ul>
-                        <form className="d-flex" role="search">
-                            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                            <button className="btn btn-outline-success" type="submit">Search</button>
-                        </form>
+
                     </div>
                 </div>
             </nav>
@@ -32,10 +32,8 @@ export default function Navbar(props) {
 
 Navbar.propTypes = {
     title: PropTypes.string.isRequired,
-    about: PropTypes.string.isRequired
 }
 
 Navbar.defaultProps = {
-    title: "Set Title Here",
-    about: "Set About Here",
+    title: "Set Title",
 }
