@@ -19,6 +19,20 @@ export default function TextForm(props) {
     const methodOnChange = (event) => {
         setText(event.target.value);
     }
+    const copyText = () => {
+        let txt = document.getElementById('myBox');
+        txt.select();
+        navigator.clipboard.writeText(text);
+        setText(text);
+    }
+    const clearTextAreaBox = () => {
+        setText("");
+    }
+
+    const removeExtraSpaces = () => {
+        let txt = text.split(/[  ]+/);
+        setText(txt.join(" "));
+    }
 
 
     return (
@@ -28,12 +42,14 @@ export default function TextForm(props) {
 
                 <div className="mb-2">
                     <label htmlFor="myBox" className="form-label text-secondary">Enter your text below to analyze</label>
-                    <textarea className="form-control" id="myBox" rows="8" value={text} onChange={methodOnChange}></textarea>
+                    <textarea className="form-control" id="myBox" rows="8" value={text} onChange={methodOnChange} onFocus={clearTextAreaBox}></textarea>
                 </div>
 
-                <button className="btn btn-outline-primary mx-1" onClick={convertTextToUpperCase}>Convert to Uppercase</button>
-                <button className="btn btn-outline-primary" onClick={convertTextToLowerCase}>Convert to Lowercase</button>
-                <button className="btn btn-outline-primary mx-1" onClick={clearText}>Clear Textarea</button>
+                <button className="btn btn-outline-primary mx-1" onClick={convertTextToUpperCase}>Uppercase</button>
+                <button className="btn btn-outline-primary" onClick={convertTextToLowerCase}>Lowercase</button>
+                <button className="btn btn-outline-danger mx-1" onClick={clearText}>Clear</button>
+                <button className="btn btn-outline-primary" onClick={copyText}>Copy Text</button>
+                <button className="btn btn-outline-primary mx-1" onClick={removeExtraSpaces}>Remove Extra Spaces </button>
             </div>
 
             <div className="container mt-4">
