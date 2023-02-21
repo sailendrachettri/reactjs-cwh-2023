@@ -1,0 +1,18 @@
+lecture 5 complected
+
+
+propTypes:
+    - it is written in the component file.
+    - to make sure not to pass any other datatypes other than already declared.
+
+// Syntax
+Navbar.propTypes = {
+    title: PropTypes.string.isRequired,
+    about: PropTypes.string
+}
+
+// default props
+Navbar.defaultProps = {
+    title: "Set Title Here",
+    about: "Set About Here",
+}
